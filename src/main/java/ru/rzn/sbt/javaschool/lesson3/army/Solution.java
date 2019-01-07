@@ -18,14 +18,13 @@ public class Solution {
         if (alpha == null || beta == null)
             return false;
 
-        int length = alpha.length;
 
         if (alpha.length != beta.length)
             return false;
 
-        for (int i=0; i<length; i++) {
+        for (int i=0; i<alpha.length; i++) {
             if (alpha[i] != null){
-                if (!(alpha[i].equals(beta[i]) || alpha[i] == beta[i] ))
+                if (!(alpha[i].equals(beta[i]) ))
                     return false;}
 
             else if(alpha[i] != beta[i])
