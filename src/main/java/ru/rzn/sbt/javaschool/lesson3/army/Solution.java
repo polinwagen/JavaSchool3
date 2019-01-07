@@ -12,6 +12,26 @@ public class Solution {
      * массивах расположены равные объекты класса Warrior
      */
     public static boolean armyEquals(Warrior[] alpha, Warrior[] beta) {
-        return false;
+        if (alpha==beta)
+            return true;
+
+        if (alpha == null || beta == null)
+            return false;
+
+        int length = alpha.length;
+
+        if (alpha.length != beta.length)
+            return false;
+
+        for (int i=0; i<length; i++) {
+            if (alpha[i] != null){
+                if (!(alpha[i].equals(beta[i]) || alpha[i] == beta[i] ))
+                    return false;}
+
+            else if(alpha[i] != beta[i])
+                    return false;
+        }
+        return true;
+
     }
 }

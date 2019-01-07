@@ -37,4 +37,19 @@ final public class Weapon {
     public int getCost() {
         return cost;
     }
+
+    @Override
+    public boolean equals(Object obj){
+
+        if(this == obj) return true;
+        if(obj == null)return false;
+        if (getClass() != obj.getClass()) return false;
+        Weapon other = (Weapon)obj;
+        return(other.getCost()==this.getCost()&& other.getDamage()==this.getDamage()
+                    &&(other.getWeaponType()==this.getWeaponType() ||(this.getWeaponType() != null && this.getWeaponType().equals(other.getWeaponType()))));
+    }
+
+
+
+
 }

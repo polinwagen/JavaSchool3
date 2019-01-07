@@ -34,4 +34,15 @@ final public class Warrior {
     public int getStrength() {
         return strength;
     }
+
+    @Override
+    public boolean equals(Object obj){
+
+        if(this == obj) return true;
+        if(obj == null)return false;
+        if (getClass() != obj.getClass()) return false;
+        Warrior other = (Warrior)obj;
+        return  other.getStrength() == this.getStrength() && (this.getWeapon()==other.getWeapon()||(this.getWeapon() != null && this.getWeapon().equals(other.getWeapon())));
+
+    }
 }
