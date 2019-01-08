@@ -16,20 +16,17 @@ public class Solution {
      */
     public static String decrypt(String encrypted){
         StringBuilder builder = new StringBuilder();
-        if(encrypted==null) return "String can`t be null";
+        if(encrypted==null) return null;
         for (char c : encrypted.toCharArray()) {
-            if ((int) c == 32 || (int) c >= 128)
-                builder.append(c);
+            int position = (int)c ;
 
-            int position = (int)c - 9;
-            if(position < 65)
-                builder.append((char)(position+26));
-            if(position < 97 && position > 90)
-                builder.append((char)(position+26));
+            if ((position >= 97 && position <= 105 ) || (position >= 64 && position <= 73))
+                builder.append((char)(position+17));
+            else if ((int) c < 65 || (int) c >= 128)
+                builder.append(c); else
+                builder.append((char)(position -9));
 
         }
-
-
         return builder.toString();
     }
 }
