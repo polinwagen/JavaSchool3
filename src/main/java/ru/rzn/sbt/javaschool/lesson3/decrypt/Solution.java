@@ -15,6 +15,21 @@ public class Solution {
      * Не забудте проверку на null.
      */
     public static String decrypt(String encrypted){
-        return null;
+        StringBuilder builder = new StringBuilder();
+        if(encrypted==null) return "String can`t be null";
+        for (char c : encrypted.toCharArray()) {
+            if ((int) c == 32 || (int) c >= 128)
+                builder.append(c);
+
+            int position = (int)c - 9;
+            if(position < 65)
+                builder.append((char)(position+26));
+            if(position < 97 && position > 90)
+                builder.append((char)(position+26));
+
+        }
+
+
+        return builder.toString();
     }
 }

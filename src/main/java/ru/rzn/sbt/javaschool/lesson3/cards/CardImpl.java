@@ -10,17 +10,6 @@ enum Suit {
 
     бубны, трефы, червы, пики;
 
-         /*
-         private int number;
-
-         Suit(int n) {
-             number = n;
-         }
-
-         int getNumber() {
-             return number;
-         }
-         */
 
 }
 
